@@ -11,10 +11,19 @@ namespace DSA
         {
             System.Console.WriteLine("hello");
         }
-
+        public int abs = 10;
         List<int> lst = new List<int>();
         const int a = 0;
-        readonly int ab = 1;        
+        readonly int ab = 1;
+
+        int myProperty;
+        
+        public int MyProperty { 
+            get
+            {
+                return Hello(myProperty);
+            } 
+        }
 
         public Recurssion()
         {            
@@ -42,8 +51,17 @@ namespace DSA
             System.Console.WriteLine(lst[i]);
             //Recurse(++i);
         }
-    }
 
+        private int Hello(int val)
+        {
+            if(val != 10)
+            {
+                return 10;
+            }
+            return 30;
+        }
+    }
+    
     class B : Recurssion
     {
 

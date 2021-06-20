@@ -1,10 +1,12 @@
-﻿using System.Linq;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Text.RegularExpressions;
 
 namespace DSA.Strings
 {
-    public static class Strings
+    public static class String
     {
         /// <summary>
         /// Write a function to find the longest common prefix string amongst an array of strings.
@@ -61,6 +63,17 @@ namespace DSA.Strings
             }
 
             return s.ToString();
+        }
+
+        public static IEnumerable<string> GetList()
+        {
+            List<string> lst = new List<string>();
+            Hashtable h1 = new Hashtable();
+            Hashtable h2 = new Hashtable();
+            var cst = h1.Keys;
+            
+
+            return lst;
         }
     }
 }

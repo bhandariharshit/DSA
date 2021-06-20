@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array\ArrayP.cs" />
+    <Compile Include="Array\ArrayQ2.cs" />
     <Compile Include="LinkedList\LinkedList.cs" />
     <Compile Include="LinkedList\LinkedListNode.cs" />
     <Compile Include="Program.cs" />

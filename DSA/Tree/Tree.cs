@@ -97,7 +97,7 @@ namespace DSA.Tree
                     queue.Enqueue(temp.left);
                 }
 
-                if(temp.right == null)
+                if (temp.right == null)
                 {
                     temp.right = new TreeNode(value);
                     break;
@@ -120,7 +120,7 @@ namespace DSA.Tree
             while (queue.Count > 0)
             {
                 temp = queue.Dequeue();
-                
+
                 if (value <= temp.value)
                 {
                     if (temp.left == null)
@@ -157,6 +157,29 @@ namespace DSA.Tree
             else
             {
                 return (size(node.left) + 1 + size(node.right));
+            }
+        }
+
+        TreeNode node = null;
+
+        public TreeNode SearchBST(TreeNode root, int val)
+        {
+            if (root is null)
+            {
+                return null;
+            }
+
+            if (val == root?.value)
+            {
+                return root;
+            }
+            else if (root.value > val)
+            {
+                return SearchBST(root.left, val);
+            }
+            else
+            {
+                return SearchBST(root.right, val);
             }
         }
     }

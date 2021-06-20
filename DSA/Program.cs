@@ -1,12 +1,11 @@
-﻿using DSA.LinkedList;
-using DSA.String;
+﻿using DSA.Array1;
+using DSA.LinkedList;
 using DSA.Tree;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
+using System.Dynamic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using String = DSA.Strings.String;
 
 namespace DSA
 {
@@ -15,10 +14,17 @@ namespace DSA
         static void Main(string[] args)
         {
 
-            Recurssion recurssion = new Recurssion();
-            recurssion.Recurse(0);
+            ArrayQ2 arrayQ2 = new ArrayQ2();
+            int remainingnum = arrayQ2.NumberWhichDoesnothaveaCorrrepondingNegative1(new int[] { 1, -1, 2, -2, 4, -4, 3 });
 
-            string sb = Strings.ConvertToBinary(5);
+            arrayQ2.solution(new int[] { 1 , 3, 2, 4, 5});
+
+            Recurssion recurssion = new Recurssion();
+            recurssion.abs = 10;            
+            recurssion.Recurse(0);
+            int prop = recurssion.MyProperty;
+            string s = "jell";            
+            string sb = String.ConvertToBinary(5);
         
             int[] nums = { 1, 2, 3 ,2, 3};
 
@@ -80,22 +86,22 @@ namespace DSA
                     dicCharCount.Add(read[i], 1);
             }
 
-            var val = dicCharCount.Max();
+            //var val = dicCharCount.Max();
 
-            Console.WriteLine(dicCharCount.Max().Value);
+            //Console.WriteLine(dicCharCount.Max().Value);
 
             /// Count of words in a string
-            Console.WriteLine(read.Split(' ').Length);
+            //Console.WriteLine(read.Split(' ').Length);
 
-            int counter = 0;
-            foreach (char a in read)
-            {
-                counter++;
-            }
-            Console.WriteLine(counter);
+            //int counter = 0;
+            //foreach (char a in read)
+            //{
+            //    counter++;
+            //}
+            //Console.WriteLine(counter);
 
             #region Palindrome
-            string s = "raja";
+            string s4 = "raja";
             string s1 = string.Join("", s.Reverse().ToArray());
             if (read == s)
                 Console.WriteLine("Palindrome");
@@ -109,9 +115,12 @@ namespace DSA
 
             #region Tree
             BTree bTree = new BTree(5);
-            bTree.InsertNodeBST(2);
-            bTree.InsertNodeBST(4);
-            bTree.InsertNodeBST(6);
+            bTree.InsertNodeBST(1);
+            bTree.InsertNodeBST(7);
+
+            //var b = bTree.SearchBST(bTree.rootNode, 5);
+
+
             bTree.printInOrder();
             //bTree.rootNode.left = new TreeNode(4);
             //bTree.rootNode.right = new TreeNode(6);

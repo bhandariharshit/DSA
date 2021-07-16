@@ -21,13 +21,14 @@ namespace DSA.Strings
             string prefix = strs[0];
 
             for (int i = 1; i < strs.Length; i++)
-
+            {
                 while (strs[i].IndexOf(prefix) != 0)
                 {
                     prefix = prefix.Substring(0, prefix.Length - 1);
-                    if (string.IsNullOrEmpty(prefix)) 
+                    if (string.IsNullOrEmpty(prefix))
                         return "";
                 }
+            }
 
             return prefix;
         }
@@ -56,7 +57,7 @@ namespace DSA.Strings
         {
             StringBuilder s = new StringBuilder();
 
-            while(n != 0)
+            while (n != 0)
             {
                 s.Insert(0, n % 2);
                 n = n / 2;
@@ -71,7 +72,7 @@ namespace DSA.Strings
             Hashtable h1 = new Hashtable();
             Hashtable h2 = new Hashtable();
             var cst = h1.Keys;
-            
+
 
             return lst;
         }

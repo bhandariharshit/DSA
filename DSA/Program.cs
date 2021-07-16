@@ -1,4 +1,5 @@
 ﻿using DSA.Array1;
+using DSA.Array;
 using DSA.LinkedList;
 using DSA.Tree;
 using System;
@@ -13,7 +14,7 @@ namespace DSA
     {
         static void Main(string[] args)
         {
-
+            String.LongestCommonPrefix(new string[] { "flower", "flow", "flight" });
             ArrayQ2 arrayQ2 = new ArrayQ2();
             int remainingnum = arrayQ2.NumberWhichDoesnothaveaCorrrepondingNegative1(new int[] { 1, -1, 2, -2, 4, -4, 3 });
 

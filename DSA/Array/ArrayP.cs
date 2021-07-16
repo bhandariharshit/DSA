@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DSA.Array
 {
-    public class ArrayP
+    public static class ArrayP
     {
         /// <summary>
         /// Given an array, rotate the array to the right by k steps, where k is non-negative.
@@ -14,7 +14,7 @@ namespace DSA.Array
         /// </summary>
         /// <param name="nums">The nums.</param>
         /// <param name="k">The k.</param>
-        public void Rotate(int[] nums, int k)
+        public static void Rotate(int[] nums, int k)
         {
 
             k = k % nums.Length;
@@ -50,6 +50,27 @@ namespace DSA.Array
             {
                 arr[i, i] = 1;
             }
+        }
+
+        public static int Reverse(int x)
+        {
+            int sum = 0;
+
+            while (x != 0)
+            {
+                if (sum > Int32.MaxValue / 10 || sum < Int32.MinValue / 10)
+                {
+                    return 0;
+                }
+                else
+                {
+                    sum = sum * 10 + x % 10;
+                    x /= 10;
+                }
+            }
+
+            return sum;
+
         }
     }
 }

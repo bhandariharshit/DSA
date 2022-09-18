@@ -15,6 +15,7 @@ namespace DSA.LinkedList
         public LinkedListNode(int value)
         {
             this.value = value;
+            this.Next = null;
         }
     }
 }

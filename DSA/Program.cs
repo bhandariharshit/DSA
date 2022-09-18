@@ -14,28 +14,35 @@ namespace DSA
     {
         static void Main(string[] args)
         {
-            String.LongestCommonPrefix(new string[] { "flower", "flow", "flight" });
             ArrayQ2 arrayQ2 = new ArrayQ2();
+            arrayQ2.JaggedArray();
+            string st = "This is an interview question";
+            Console.WriteLine(String.ReplaceCharInString(new char[0], ' ', "SPACE"));
+            double d = 1.0;
+            bool check = String.ValidSubstring("for", "geefksforgeeks");
+            String.LongestCommonPrefix(new string[] { "flower", "flow", "flight" });
+            arrayQ2.FindMissingNumber(new int[] { 1, 2, 4, 5 }, 5);
+
             int remainingnum = arrayQ2.NumberWhichDoesnothaveaCorrrepondingNegative1(new int[] { 1, -1, 2, -2, 4, -4, 3 });
 
-            arrayQ2.solution(new int[] { 1 , 3, 2, 4, 5});
+            arrayQ2.solution(new int[] { 1, 3, 2, 4, 5 });
 
             Recurssion recurssion = new Recurssion();
-            recurssion.abs = 10;            
+            recurssion.abs = 10;
             recurssion.Recurse(0);
             int prop = recurssion.MyProperty;
-            string s = "jell";            
+            string s = "jell";
             string sb = String.ConvertToBinary(5);
-        
-            int[] nums = { 1, 2, 3 ,2, 3};
 
-            Console.WriteLine(2^3);
+            int[] nums = { 1, 2, 3, 2, 3 };
+
+            Console.WriteLine(2 ^ 3);
 
             int unique = 0;
-            foreach(int i in nums)
+            foreach (int i in nums)
             {
                 unique ^= i;
-            }   
+            }
 
             #region LinkedList
 
@@ -116,8 +123,8 @@ namespace DSA
 
             #region Tree
             BTree bTree = new BTree(5);
-            bTree.InsertNodeBST(1);
-            bTree.InsertNodeBST(7);
+            //bTree.InsertNodeBST(1);
+            //bTree.InsertNodeBST(7);
 
             //var b = bTree.SearchBST(bTree.rootNode, 5);
 
@@ -144,10 +151,7 @@ namespace DSA
 
             int[] PlusOne(int[] digits)
             {
-
-                int carry = 1;
-                int i = 0;
-                for (i = digits.Length - 1; i >= 0; i--)
+                for (int i = digits.Length - 1; i >= 0; i--)
                 {
                     if (digits[i] == 9)
                     {
@@ -160,41 +164,37 @@ namespace DSA
                     }
                 }
 
-                if (i == -1)
-                {
-                    int[] arr = new int[digits.Length + 1];
-                    arr[0] = 1;
-                    return arr;
-                }
-
-                return digits;
+                int[] arr = new int[digits.Length + 1];
+                arr[0] = 1;
+                return arr;
             }
-            #endregion
-
-            #endregion
-
-            #region Arithmetic
-
-            #region Square Root
-            int sq = 0;
-            int x = 6;
-
-            while (sq <= x / 2)
-            {
-                if (sq * sq == x)
-                {
-                    Console.WriteLine(sq);
-                    break;
-                }
-                else if (sq * sq > x)
-                {
-                    Console.WriteLine(sq - 1);
-                    break;
-                }
-                sq++;
-            }  
-            #endregion
-            #endregion
         }
+        #endregion
+
+        #endregion
+
+        #region Arithmetic
+
+        #region Square Root
+        //int sq = 0;
+        //int x = 6;
+
+        //    while (sq <= x / 2)
+        //    {
+        //        if (sq* sq == x)
+        //        {
+        //            Console.WriteLine(sq);
+        //            break;
+        //        }
+        //        else if (sq* sq > x)
+        //        {
+        //            Console.WriteLine(sq - 1);
+        //            break;
+        //        }
+        //    sq++;
+            
+            #endregion
+            #endregion
+        
     }
 }

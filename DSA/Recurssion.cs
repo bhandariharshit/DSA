@@ -52,6 +52,23 @@ namespace DSA
             //Recurse(++i);
         }
 
+        public bool BinarySearch(int[] array, int low, int high, int element)
+        {
+            if (low > high)
+                return false;
+
+            int mid = (low + high) / 2;
+            if(array[mid] == element)
+            {
+                return true;
+            }
+
+            if (array[mid] > element)
+                return BinarySearch(array, low, mid - 1, element);
+            else
+                return BinarySearch(array, low + 1, high, element);
+        }
+
         private int Hello(int val)
         {
             if(val != 10)

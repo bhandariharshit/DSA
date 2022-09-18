@@ -75,41 +75,7 @@ namespace DSA.Tree
             printInOrder(rootNode);
         }
 
-        public void InsertNodeBT(int value)
-        {
-            Queue<TreeNode> queue = new Queue<TreeNode>();
-
-            queue.Enqueue(this.rootNode);
-
-            TreeNode temp = null;
-
-            while (queue.Count > 0)
-            {
-                temp = queue.Dequeue();
-
-                if (temp.left == null)
-                {
-                    temp.left = new TreeNode(value);
-                    break;
-                }
-                else
-                {
-                    queue.Enqueue(temp.left);
-                }
-
-                if (temp.right == null)
-                {
-                    temp.right = new TreeNode(value);
-                    break;
-                }
-                else
-                {
-                    queue.Enqueue(temp.right);
-                }
-            }
-        }
-
-        public void InsertNodeBST(int value)
+        public void InsertNodeBSTUsingQueue(int value)
         {
             Queue<TreeNode> queue = new Queue<TreeNode>();
 
@@ -146,6 +112,49 @@ namespace DSA.Tree
                     }
                 }
             }
+        }
+
+        public void InsertBSTNodeItertative(int value)
+        {
+            TreeNode previous = null;
+            TreeNode current = rootNode;
+
+            while(current != null)
+            {
+                previous = current;
+                if(value <= current.value)
+                {
+                    current = current.left;
+                }
+                else
+                {
+                    current = current.right;
+                }
+            }
+
+            if(value <= previous.left.value)
+            {
+                previous.left = new TreeNode(value);
+            }
+            else
+            {
+                previous.right = new TreeNode(value);
+            }
+        }
+
+        public TreeNode InsertBSTNodeRecurcive(int value, TreeNode node)
+        {
+            if (node is null)
+                return new TreeNode(value);
+
+            if (value <= node.value)
+            {
+                node.left = InsertBSTNodeRecurcive(value, node.left);
+            }
+            else
+                node.right = InsertBSTNodeRecurcive(value, node.right);
+
+            return node;
         }
 
         public virtual int size(TreeNode node)

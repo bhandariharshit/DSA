@@ -72,5 +72,82 @@ namespace DSA.Array
             return sum;
 
         }
+
+        /*
+         * Input : arr = {2, 5, 6, 9},  m = 2 
+           Output : 2
+           Explanation: 
+           subarrays are [2, 5, 6, 9] 
+           and [5, 6, 9]
+         * https://www.geeksforgeeks.org/number-subarrays-m-odd-numbers/
+         */
+
+        public static int SubArrayWithMOddNumbers(int[] a, int m)
+        {
+            int count = 0;
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                int counter = 0;
+                for (int j = i; j < a.Length; j++)
+                {
+                    if(a[j] % 2 != 0)
+                    {
+                        counter++;
+                    }
+
+                    if(counter == m)
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            return count;
+        }
+
+        public static void RemoveDuplicateFromSortedArray(int[] array)
+        {
+            // 1 1 2 3
+
+            if (array.Length <= 1)
+                return;
+
+            int slow = 0;
+            int fast = 1;
+
+            while(slow < array.Length - 1 && fast < array.Length)
+            {
+                if(slow != fast)
+                {
+                    array[slow + 1] = array[fast];
+                    slow++;
+                }
+                fast++;
+            }
+        }
+
+        public static int GetMaximumOfKConsecutive(int[] array, int k)
+        {
+            if (k > array.Length)
+                return -1;
+
+            int sum = 0;
+            int maxSum = 0;
+
+            for(int i = 0; i < array.Length; i++)
+            {
+                sum = sum + array[i];
+                if (i == k - 1)
+                    maxSum = sum;
+
+                if(i >= k)
+                {
+                    sum = sum - array[i - k];
+                    maxSum = Math.Max(sum, maxSum);
+                }
+            }
+            return maxSum;
+        }
     }
 }
